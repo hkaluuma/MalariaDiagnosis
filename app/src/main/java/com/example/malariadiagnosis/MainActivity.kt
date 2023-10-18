@@ -1,5 +1,6 @@
 package com.example.malariadiagnosis
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener(View.OnClickListener {
             if(binding.username.text.toString()=="user"&& binding.password.text.toString()=="1234"){
+                val navigate = Intent(this,HomePage::class.java)
+                startActivity(navigate)
                 Toast.makeText(this,"Login Successful", Toast.LENGTH_SHORT).show()
             } else{
                 Toast.makeText(this, "Login failed.", Toast.LENGTH_SHORT).show()
